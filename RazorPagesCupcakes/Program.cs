@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<RazorPagesCupcakesContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesCupcakesContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesCupcakesContext' not found.")));
+//WebHost
+//builder.
+
 
 var app = builder.Build();
 
@@ -26,5 +29,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapControllerRoute( name: "default", pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
 
 app.Run();
