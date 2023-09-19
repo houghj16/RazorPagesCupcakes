@@ -8,8 +8,6 @@ builder.Services.AddRazorPages();
 // AddDB
 builder.Services.AddDbContext<RazorPagesCupcakesContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesCupcakesContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesCupcakesContext' not found.")));
-//WebHost
-//builder.WebHost.Start();
 
 var app = builder.Build();
 

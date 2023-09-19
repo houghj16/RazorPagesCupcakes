@@ -16,5 +16,6 @@ public class Cupcakes
     public decimal Price { get; set; }
 
     // Add ingredients property
-
+    //public List<Ingredient>? Ingredients { get; set; }
+    
 }
