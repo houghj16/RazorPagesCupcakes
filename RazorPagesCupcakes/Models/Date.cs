@@ -1,7 +1,23 @@
-﻿namespace RazorPagesCupcakes.Models
+﻿using System.Drawing.Printing;
+
+namespace RazorPagesCupcakes.Models
 {
     public class Date
     {
+        public void PrintDays()
+        {
+            string longMessage = """
+             This is a long message.
+             It has several lines.
+                 Some are indented
+                         more than others.
+             Some should start at the first column.
+             Some have "quoted text" in them.
+             """;
+            Console.WriteLine(GetDay(1));
+            Console.WriteLine(longMessage);
+        }
+
         static string GetDay(int dayNum)
         {
             string dayName;
@@ -14,7 +30,7 @@
                     dayName = "Tuesday";
                     break;
                 case 3:
-                    dayName = "Wednesday";
+                    dayName = "Wednsday";
                     break;
                 case 4:
                     dayName = "Thursday";
@@ -23,7 +39,7 @@
                     dayName = "Friday";
                     break;
                 case 6:
-                    dayName = "Saturday";
+                    dayName = "Saterday";
                     break;
                 case 7:
                     dayName = "Sunday";

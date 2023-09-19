@@ -5,11 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+// AddDB
 builder.Services.AddDbContext<RazorPagesCupcakesContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesCupcakesContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesCupcakesContext' not found.")));
 //WebHost
-//builder.
-
+//builder.WebHost.Start();
 
 var app = builder.Build();
 
@@ -31,5 +31,12 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.MapControllerRoute( name: "default", pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
+
+//int IncrementByOne(int source, int increment = 1) // Use expression body for local function
+//{
+//    return source + increment;
+//}
+
+//Console.WriteLine(IncrementByOne(5)); // 6
 
 app.Run();
